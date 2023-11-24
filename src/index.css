@@ -9,11 +9,12 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
 @layer utilities {
   .gradient {
-    @apply bg-gradient-to-b from-[#086972] via-[#17B978] to-[#83FFBC] opacity-[35%];
+    @apply bg-gradient-to-b from-[#086972] via-[#17B978] to-[#83FFBC];
   }
 
   .glassmorph {

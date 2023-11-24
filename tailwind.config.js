@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     boxShadow: {
       primary: "1px 1px 30px 0px rgba(0,0,0,0.15)",
+      secondary: "0px 0px 10px 1px rgba(0,0,0,0.1)",
       "3xl": "1px 35px 60px -15px rgba(0, 0, 0, 0.3)",
     },
     fontWeight: {
