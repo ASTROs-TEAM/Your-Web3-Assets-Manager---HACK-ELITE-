@@ -4,6 +4,9 @@ import UparrowIcon from "../assets/icons/UparrowIcon";
 import DownArrowIcon from "../assets/icons/DownArrowIcon";
 import LendBorrow from "./LendBorrow";
 import WalletConnect from "./WalletConnect";
+import Charts from "./Charts";
+import Graph from "./Graph";
+
 const Dashboard = () => {
   let imgUrl =
     "https://img.freepik.com/free-photo/3d-illustration-boy-with-camera-his-hand_1142-36694.jpg?size=626&ext=jpg&ga=GA1.1.61347337.1693890015&semt=ais";
@@ -72,6 +75,7 @@ const Dashboard = () => {
 
             <WalletConnect />
           </div>
+          <Charts />
         </div>
       </div>
     </div>
