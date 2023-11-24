@@ -1,9 +1,10 @@
 import "./App.css";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="font-bold text-blue-400">My Assets</header>
+    <div className="h-screen w-screen">
+      <SideBar />
     </div>
   );
 }

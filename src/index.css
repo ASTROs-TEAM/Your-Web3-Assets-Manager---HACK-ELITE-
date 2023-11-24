@@ -15,4 +15,8 @@
   .gradient {
     @apply bg-gradient-to-b from-[#086972] via-[#17B978] to-[#83FFBC] opacity-[35%];
   }
+
+  .glassmorph {
+    @apply bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg;
+  }
 }
