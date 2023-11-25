@@ -1,7 +1,30 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 function Graph() {
+  const [CoinsData,setCoinsData] = useState([])
+
+  useEffect(() => {
+    fetch("https://api.livecoinwatch.com/coins/list",{
+      method:"POST",
+      headers:{
+        "Content-Type": "application/json",
+        "x-api-key": "9c6c853d-9442-4f1f-aac4-4023dd79d98e"
+      },
+      body:JSON.stringify(
+        {
+          "currency": "USD",
+          "sort": "rank",
+          "order": "ascending",
+          "offset": 0,
+          "limit": 50,
+          "meta": true
+        }
+      )
+    }).then((res) => res.json()).then((data=> setCoinsData(data)))
+
+},[])
+
   const data = [
     { name: "Group A", value: 400 },
     { name: "Group B", value: 300 },

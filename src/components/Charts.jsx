@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState , useEffect}from "react";
 import {
   LineChart,
   Line,
@@ -12,11 +12,35 @@ import {
 import Graph from "./Graph";
 
 function Charts() {
+  const [CoinsData , setCoinsData] = useState([]);
+
+
+    useEffect(() => {
+        fetch("https://api.livecoinwatch.com/coins/list",{
+          method:"POST",
+          headers:{
+            "Content-Type": "application/json",
+            "x-api-key": "9c6c853d-9442-4f1f-aac4-4023dd79d98e"
+          },
+          body:JSON.stringify(
+            {
+              "currency": "USD",
+              "sort": "rank",
+              "order": "ascending",
+              "offset": 0,
+              "limit": 50,
+              "meta": true
+            }
+          )
+        }).then((res) => res.json()).then((data=> setCoinsData(data)))
+    
+    },[])
+
   const data = [
     {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
+      name: CoinsData.name,
+      CurrentPrice: CoinsData.rate,
+      cap: CoinsData,
       amt: 2400,
     },
     {
@@ -75,7 +99,7 @@ function Charts() {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" tick={{ fontSize: 10 }} />
+            <XAxis dataKey={data.name} tick={{ fontSize: 10 }} />
             <YAxis tick={{ fontSize: 10 }} />
             <Tooltip />
             <Legend />
